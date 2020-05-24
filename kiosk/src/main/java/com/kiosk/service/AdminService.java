@@ -1,0 +1,14 @@
+package com.kiosk.service;
+
+import java.util.List;
+
+import com.kiosk.model.LoginVO;
+import com.kiosk.model.ProductVO;
+
+public interface AdminService {
+	public void regProduct(ProductVO pvo) throws Exception;
+	
+	public LoginVO adminLogin(LoginVO lvo) throws Exception;
+	
+	public List listProduct() throws Exception;
+}

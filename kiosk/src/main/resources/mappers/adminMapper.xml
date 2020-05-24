@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kiosk.mapper.AdminMapper">
+	
+	<select id="adminLogin" resultType="com.kiosk.model.LoginVO">
+		select * from adminUser where id=#{id} and pw =#{pw}
+	</select>
+
+
+	<insert id="regProduct">
+		insert into product(product_name,product_price,product_type,product_image) 
+			values(#{product_name},#{product_price},#{product_type},#{product_image})
+	</insert>
+	
+	<select id="listProduct" resultType="com.kiosk.model.ProductVO">
+		select * from product
+	</select>
+</mapper>
