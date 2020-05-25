@@ -22,5 +22,11 @@ public class ProductMapperImpl implements ProductMapper{
 		List list = session.selectList(namespace+".listProduct");
 		return list;
 	}
+
+
+	@Override
+	public ProductVO productDetail(int pno) throws Exception {
+		return session.selectOne(namespace+".productDetail",pno);
+	}
 	
 }

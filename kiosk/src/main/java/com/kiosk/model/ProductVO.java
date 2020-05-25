@@ -8,6 +8,16 @@ public class ProductVO {
 	private int product_price;
 	private String product_type;
 	private String product_image;
+	private int product_id;
+	
+	
+	public int getProduct_id() {
+		return product_id;
+	}
+
+	public void setProduct_id(int product_id) {
+		this.product_id = product_id;
+	}
 
 	public void setProduct_image(String product_image) {
 		this.product_image = product_image;

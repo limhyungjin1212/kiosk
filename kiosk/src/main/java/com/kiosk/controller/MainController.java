@@ -33,6 +33,16 @@ public class MainController {
 	}
 	
 	
+	@RequestMapping(value ="productDetail" , method = RequestMethod.GET)
+	public String productDetail(@RequestParam int no , Model model) throws Exception{
+		
+		logger.info("상품 디테일로 왔는가?");
+		
+		model.addAttribute("pd",ps.productDetail(no));
+		
+		
+		return "include/productDetail";
+	}
 	
 	
 	
