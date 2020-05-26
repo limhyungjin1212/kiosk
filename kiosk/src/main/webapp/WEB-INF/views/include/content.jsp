@@ -7,9 +7,9 @@
 <script>
 	$(document).ready(function() {
 
-		$("#proBox").click(function() {
-			//var pno = $(this).parent().attr("data-rno"); //상품의 번호
-			var pno = 1;
+		$(".proBox").click(function() {
+			
+			var pno = $(this).children(":hidden").val(); //상품의 번호 
 			console.log(pno);
 			
 			 window.open("productDetail?no="+pno+"", "새창", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
@@ -97,8 +97,8 @@
 			<div class="row">
 
 				<c:forEach items="${plist}" var="pvo">
-					<div class="col-lg-4 col-md-6 mb-4" id="proBox">
-						<h5>${pvo.product_id }</h5>
+					<div class="proBox col-lg-4 col-md-6 mb-4" >
+						<input type="hidden" class="pno" value="${pvo.product_id }">
 						<div class="card h-100">
 							<img
 								class="card-img-top"
